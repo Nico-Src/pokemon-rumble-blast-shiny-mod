@@ -69,6 +69,10 @@ Run **Batch CIA 3DS Decryptor** on the repacked ROM to produce a decrypted file 
 
 Open the decrypted ROM in **Citra** or **Azahar** and enjoy shiny hunting!
 
+### Alternative: Play on 3DS hardware
+
+Instead of decrypting for an emulator, you can use HackingToolkit9DS to build a `.cia` file and install it directly on a modded 3DS via FBI. This method is **untested** — use at your own risk.
+
 ## Known Issues
 
 - **Shiny model not loaded on initial spawn** — When entering a level with a shiny Pokémon as your active character, the normal model loads initially. Switching to another Pokémon and back resolves it.
