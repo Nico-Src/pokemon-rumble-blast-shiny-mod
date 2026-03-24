@@ -78,6 +78,7 @@ Instead of decrypting for an emulator, you can use HackingToolkit9DS to build a 
 - **Shiny model not loaded on initial spawn** — When entering a level with a shiny Pokémon as your active character, the normal model loads initially. Switching to another Pokémon and back resolves it.
 - **Collection 3D model** — Shiny Pokémon in the collection detail screen (top screen) may display the normal model instead of the shiny variant. The shiny star indicator still appears correctly.
 - **Limited shiny models** — Only Pokémon with manually created shiny texture variants will display alternate colors. Others will appear normal even if flagged as shiny.
+- **Azahar emulator: use OpenGL** — Azahar's Vulkan renderer causes visual artifacts (oversized particles on attacks and shiny sparkles). Switch to **OpenGL** in Azahar's graphics settings to avoid this.
 
 ## Project Status
 
