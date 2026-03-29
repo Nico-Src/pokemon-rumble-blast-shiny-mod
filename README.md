@@ -2,6 +2,9 @@
   <img src="./custom_logo.png" alt="Pokémon Rumble Blast Shiny Mod" width="400">
 </p>
 
+> [!CAUTION]
+> There are still some models and icons missing, so if you install the patch now and encounter a Pokémon that doesn’t yet have a model or icon, the game may crash. This notice will be removed once all models have been added..
+
 # Pokémon Rumble Blast — Shiny Mod
 
 A ROM mod that adds a full **Shiny Pokémon system** to Pokémon Rumble Blast (3DS), a feature that never existed in the original game.
@@ -30,6 +33,10 @@ A ROM mod that adds a full **Shiny Pokémon system** to Pokémon Rumble Blast (3
 - **Citra** or **Azahar** emulator to play the patched ROM
 
 ## Installation
+
+Video Guide: 
+
+[![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?logo=YouTube&logoColor=white)](https://www.youtube.com/watch?v=OOSPtG0tg5I)
 
 ### 1. Extract the ROM
 
