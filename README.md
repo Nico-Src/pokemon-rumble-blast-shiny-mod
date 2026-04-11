@@ -2,7 +2,7 @@
   <img src="./custom_logo.png" alt="Pokémon Rumble Blast Shiny Mod" width="400">
 </p>
 
-# Pokémon Rumble Blast — Shiny Mod
+# Pokémon Rumble Blast - Shiny Mod
 
 A ROM mod that adds a full **Shiny Pokémon system** to Pokémon Rumble Blast (3DS), a feature that never existed in the original game.
 
