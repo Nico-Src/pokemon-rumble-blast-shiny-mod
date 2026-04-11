@@ -11,24 +11,24 @@ A ROM mod that adds a full **Shiny Pokémon system** to Pokémon Rumble Blast (3
 
 ## Features
 
-- **Shiny Pokémon spawns** — Random chance for any wild Pokémon to spawn as shiny
-- **Configurable shiny rate** — Default 1/512, adjustable via command line (1/256, 1/1024, 1/4096, etc.)
-- **Shiny 3D models** — Alternate color variants load automatically for shiny Pokémon
-- **Shiny face icons** — Collection and UI screens display shiny-specific icons
-- **Shiny star indicator** — Shiny Pokémon are marked with a colored star in the collection grid
-- **Shiny name color** — Shiny Pokémon names appear in a distinct color on the field
-- **Guaranteed catch** — Shiny Pokémon have a 100% befriend rate
-- **Shiny death drops** — Defeating a shiny Pokémon drops a shiny toy via the existing drop system
-- **Save persistence** — Shiny status is preserved across save/load cycles
+- **Shiny Pokémon spawns** - Random chance for any wild Pokémon to spawn as shiny
+- **Configurable shiny rate** - Default 1/512, adjustable via command line (1/256, 1/1024, 1/4096, etc.)
+- **Shiny 3D models** - Alternate color variants load automatically for shiny Pokémon
+- **Shiny face icons** - Collection and UI screens display shiny-specific icons
+- **Shiny star indicator** - Shiny Pokémon are marked with a colored star in the collection grid
+- **Shiny name color** - Shiny Pokémon names appear in a distinct color on the field
+- **Guaranteed catch** - Shiny Pokémon have a 100% befriend rate
+- **Shiny death drops** - Defeating a shiny Pokémon drops a shiny toy via the existing drop system
+- **Save persistence** - Shiny status is preserved across save/load cycles
 
 ## Requirements
 
 - **Python 3.12+**
-- **HackingToolkit9DS** — For extracting and repacking the ROM
+- **HackingToolkit9DS** - For extracting and repacking the ROM
   - Download & tutorial: https://www.gamebrew.org/wiki/HackingToolkit9DS_3DS
 - A **US encrypted copy** of Pokémon Rumble Blast (.3ds / .cia)
   - Dump from your own 3DS, or obtain a US encrypted copy
-- **Batch CIA 3DS Decryptor** — For decrypting the repacked ROM
+- **Batch CIA 3DS Decryptor** - For decrypting the repacked ROM
   - Download: https://gbatemp.net/threads/batch-cia-3ds-decryptor-a-simple-batch-file-to-decrypt-cia-3ds.512385/
 - **Citra** or **Azahar** emulator to play the patched ROM
 
@@ -78,14 +78,14 @@ Open the decrypted ROM in **Citra** or **Azahar** and enjoy shiny hunting!
 
 ### Alternative: Play on 3DS hardware
 
-Instead of decrypting for an emulator, you can use HackingToolkit9DS to build a `.cia` file and install it directly on a modded 3DS via FBI. This method is **untested** — use at your own risk.
+Instead of decrypting for an emulator, you can use HackingToolkit9DS to build a `.cia` file and install it directly on a modded 3DS via FBI. This method is **untested** - use at your own risk.
 
 ## Known Issues
 
-- **Shiny model not loaded on initial spawn** — When entering a level with a shiny Pokémon as your active character, the normal model loads initially. Switching to another Pokémon and back resolves it.
-- **Collection 3D model** — Shiny Pokémon in the collection detail screen (top screen) may display the normal model instead of the shiny variant. The shiny star indicator still appears correctly.
-- **Limited shiny models** — Only Pokémon with manually created shiny texture variants will display alternate colors. Others will appear normal even if flagged as shiny.
-- **Azahar emulator: use OpenGL** — Azahar's Vulkan renderer causes visual artifacts (oversized particles on attacks and shiny sparkles). Switch to **OpenGL** in Azahar's graphics settings to avoid this.
+- **Shiny model not loaded on initial spawn** - When entering a level with a shiny Pokémon as your active character, the normal model loads initially. Switching to another Pokémon and back resolves it.
+- **Collection 3D model** - Shiny Pokémon in the collection detail screen (top screen) may display the normal model instead of the shiny variant. The shiny star indicator still appears correctly.
+- **Limited shiny models** - Only Pokémon with manually created shiny texture variants will display alternate colors. Others will appear normal even if flagged as shiny.
+- **Azahar emulator: use OpenGL** - Azahar's Vulkan renderer causes visual artifacts (oversized particles on attacks and shiny sparkles). Switch to **OpenGL** in Azahar's graphics settings to avoid this.
 
 ## Project Status
 
