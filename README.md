@@ -6,6 +6,13 @@
 
 A ROM mod that adds a full **Shiny Pokémon system** to Pokémon Rumble Blast (3DS), a feature that never existed in the original game.
 
+## Known Issue:
+The flag currently used to indicate shininess has an unintended side effect. During team battles, Pokémon assigned using this flag may incorrectly appear as shiny.
+
+This issue primarily affects the story playthrough and should not cause problems later in the game. As a temporary workaround, any incorrectly marked (“fake”) shiny Pokémon can simply be discarded after team battles.
+
+Unfortunately, alternative flags either introduce major glitches or make the game unplayable, so this limitation remains for now.
+
 ## Features
 
 - **Shiny Pokémon spawns** - Random chance for any wild Pokémon to spawn as shiny
