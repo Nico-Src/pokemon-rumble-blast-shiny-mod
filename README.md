@@ -13,7 +13,7 @@ This issue primarily affects the story playthrough and should not cause problems
 
 Unfortunately, alternative flags either introduce major glitches or make the game unplayable, so this limitation remains for now.
 
-Disclaimer this seems to be fixed by saving and quitting after the battle has concluded. Thanks to @thecrafter1024 on discord :)
+> Disclaimer: this seems to be fixed by saving and quitting after the battle has concluded. Thanks to @thecrafter1024 on discord :)
 
 ## Features
 
@@ -26,6 +26,8 @@ Disclaimer this seems to be fixed by saving and quitting after the battle has co
 - **Guaranteed catch** - Shiny Pokémon have a 100% befriend rate
 - **Shiny death drops** - Defeating a shiny Pokémon drops a shiny toy via the existing drop system
 - **Save persistence** - Shiny status is preserved across save/load cycles
+
+> Because of the sparkling effect all shinies will have a trait past eastern town. Thanks to @thecrafter1024 as well for this info.
 
 ## Requirements
 
