@@ -13,6 +13,8 @@ This issue primarily affects the story playthrough and should not cause problems
 
 Unfortunately, alternative flags either introduce major glitches or make the game unplayable, so this limitation remains for now.
 
+Disclaimer this seems to be fixed by saving and quitting after the battle has concluded. Thanks to @thecrafter1024 on discord :)
+
 ## Features
 
 - **Shiny Pokémon spawns** - Random chance for any wild Pokémon to spawn as shiny
