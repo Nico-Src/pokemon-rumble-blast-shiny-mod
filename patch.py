@@ -76,6 +76,8 @@ def main():
     parser.add_argument('code_bin', help="Path to original code.bin")
     parser.add_argument('--rate', default='1/512',
                         help="Shiny rate as '1/N' (default: 1/512)")
+    parser.add_argument('--skip', nargs='*', default=[],
+                        help="Hooks to leave out, e.g. --skip Hook5 Hook7")
     args = parser.parse_args()
 
     code_bin_path = args.code_bin
@@ -114,6 +116,10 @@ def main():
     # ----------------------------------------------------------------
     def patch(file_off, expected_orig, new_val, label):
         global patched_count
+        hook_name = label.split(':')[0]
+        if any(hook_name.startswith(s) for s in args.skip):
+            print("  SKIPPED %s" % label)
+            return
         va = file_off + 0x100000
         cur = struct.unpack_from('<I', data, file_off)[0]
         if cur != expected_orig:
@@ -133,6 +139,9 @@ def main():
     # ================================================================
     #  HOOKS
     # ================================================================
+    # Mod RAM lives at 0x7E4A00-0x7E4B10: the unused tail of the last
+    # bss page (bss ends at 0x7E4918, page ends at 0x7E5000). The old
+    # address 0x6DA000 was inside a game table in bss.
     print("Applying hooks...")
     patch(0x1AA9B8, 0xE320F000, 0xEB087C4C, "Hook1: Shiny RNG")
     patch(0x1E9A84, 0xEB00B42D, 0xEB077FD1, "Hook2: Shiny Model")
@@ -157,14 +166,14 @@ def main():
         0xE593100C,  # LDR R1, [R3, #0xC]
         0xE3110004,  # TST R1, #4
         0x1A000010,  # BNE common_set
-        0xE59F004C,  # LDR R0, [PC, #0x4C]  ; =0x6DA000
+        0xE59F004C,  # LDR R0, [PC, #0x4C]  ; =0x7E4A00
         0xE5901000,  # LDR R1, [R0]
         0xE3510000,  # CMP R1, #0
         0x1A000003,  # BNE skip_seed
         0xEF000028,  # SVC #0x28
         0xE0201001,  # EOR R1, R0, R1
         0xE3811001,  # ORR R1, R1, #1
-        0xE59F0030,  # LDR R0, [PC, #0x30]  ; =0x6DA000
+        0xE59F0030,  # LDR R0, [PC, #0x30]  ; =0x7E4A00
         0xE59FC030,  # LDR R12, [PC, #0x30] ; =0x343FD
         0xE00C0C91,  # MUL R12, R1, R12
         0xE59F102C,  # LDR R1, [PC, #0x2C]  ; =0x269EC3
@@ -178,7 +187,7 @@ def main():
         0xE3811102,  # ORR R1, R1, #0x80000000
         0xE583100C,  # STR R1, [R3, #0xC]
         0xE8BD900F,  # POP {R0-R3, R12, PC}
-        0x006DA000,  # RNG state addr
+        0x007E4A00,  # RNG state addr (moved out of game bss, was 0x6DA000)
         0x000343FD,  # LCG multiplier
         0x00269EC3,  # LCG addend
         rate_mask,   # Rate mask (configurable)
@@ -188,12 +197,12 @@ def main():
     # --- Cave 2: Shiny Model _S suffix (26 words) ---
     cave2 = [
         0xE92D400E, 0xEBF93459, 0xE5961000, 0xE3510000,
-        0x0A000013, 0xE591100C, 0xE3110005, 0x0A00000E,
+        0x0A000011, 0xE591100C, 0xE3110005, 0x0A00000E,
         0xE59F303C, 0xE1A02003, 0xE1A01000, 0xE0D100B2,
         0xE0C200B2, 0xE3500000, 0x1AFFFFFB, 0xE2422002,
         0xE3A0005F, 0xE0C200B2, 0xE3A00053, 0xE0C200B2,
         0xE3A00000, 0xE1C200B0, 0xE1A00003, 0xE8BD400E,
-        0xE12FFF1E, 0x006DA010,
+        0xE12FFF1E, 0x007E4A10,  # name buffer (was 0x6DA010, game memory)
     ]
     write_cave(0x3C99D0, cave2, "Cave 2")
 
@@ -231,7 +240,7 @@ def main():
         0xE3A03C02, 0xE3833065, arm_bl(35, 0x2BF104),
         0xE28DD008, 0xE1A00005, 0xE8BD502C,
         0xE3A01000, 0xE12FFF1E,
-        0x006DA004,
+        0x007E4A04,  # drop counter (was 0x6DA004, game memory)
     ]
     write_cave(0x3C9A40, cave5, "Cave 5")
 
